@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena Popov Guessing Game</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script data-main="scripts/index" src="scripts/require.js"></script>
+    <LINK REL=StyleSheet HREF="./Content/GuessGameStyles.css" TYPE="text/css">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome Elena Popov's Number Guessing Game</h1>
+    </header>
+    <section>
+        <form id="gameForm" name="gameForm" action="./Scripts/done.js" method="post">
+            <div id="divFireworks">
+                <img src="./Content/Images/fireworks.gif" alt="Fireworks Image">
+            </div>
+            <div id="divButtons">
+                <button id="button1" type="button" value="1">1</button>
+                <button id="button2" type="button" value="2">2</button>
+                <button id="button3" type="button" value="3">3</button>
+                <button id="button4" type="button" value="4">4</button>
+                <button id="button5" type="button" value="5">5</button>
+            </div>
+            <div id="divButtons2">
+                <button id="button6" type="button" value="6">6</button>
+                <button id="button7" type="button" value="7">7</button>
+                <button id="button8" type="button" value="8">8</button>
+                <button id="button9" type="button" value="9">9</button>
+                <button id="button10" type="button" value="10">10</button>
+
+                <br />
+            </div>
+            <div>
+                <p id="messageParagr">Click a number or enter one between 0 and 10.</p>
+                <p id="numberOfTries">4 tries left</p>
+                <p id="userOutput" name="userOutput">Good luck!</p>
+            </div>
+            <div>
+
+                <input id="userGuessTextBox" name="userGuessTextBox" type="text" autofocus>
+                <input id="tryNumberButton" type="button" value="Try your guess" onclick="guessNumber2();">
+                <input id="resetButton" type="button" value="Play Again" onclick="resetGame();">
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+
+
+
+
+
