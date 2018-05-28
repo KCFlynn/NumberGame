@@ -1,4 +1,4 @@
-require(["resetGame", "randomNumber", "setButtonEvents"], function (ResetGame, GenerateRandomNumber, SetButtonEvents) {
+require(["resetGame", "randomNumber", "buttonEvents"], function (ResetGame, GenerateRandomNumber, ButtonEvents) {
     //usually people name the files and the functions with the same name
     
     
@@ -6,17 +6,16 @@ require(["resetGame", "randomNumber", "setButtonEvents"], function (ResetGame, G
 /* Created by: Elena Popov */
 /* Date: Feb 11th 2014 */
 /* Evolved by Kurt Friedrich Mar 18 2017 */
-$(document).ready(function() {
-
+$(document).ready(function() {
 var buttonIndex = $('#button1');
 for(i =1; i < 6; i++){
-setButtonEvents(buttonIndex);
+ButtonEvents.buttonEvents(buttonIndex);
 buttonIndex = buttonIndex.next();
 }
 
 var buttonIndex = $('#button6');
 for(i =1; i < 6; i++){
-setButtonEvents(buttonIndex);
+ButtonEvents.buttonEvents(buttonIndex);
 buttonIndex = buttonIndex.next();
 }
 
@@ -24,6 +23,7 @@ buttonIndex = buttonIndex.next();
 
 
 // a series of string variables that hold messages that are displayed depending on the status and course of the game
+
 var message = "";
 var lowerNumberMsg = " is not correct! Try a lower number.";
 var higherNumberMsg = " is not correct! Try a higher number.";
@@ -148,12 +148,5 @@ function enableButtons() {
 // $('#button1').click(function () {
  //guessNumber('1');
   //  });
-function setButtonEvents(theButton) {
-        theButton.click(function () {
-            guessNumber(theButton.val());
-        })
-}
 
-
-
-
+});
