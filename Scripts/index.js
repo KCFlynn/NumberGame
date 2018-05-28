@@ -1,4 +1,4 @@
-require(["resetGame", "randomNumber", "buttonEvents"], function (ResetGame, GenerateRandomNumber, ButtonEvents) {
+require(["resetGame", "generateRandomNumber"], function (ResetGame, GenerateRandomNumber) {
     //usually people name the files and the functions with the same name
     
     
@@ -7,15 +7,16 @@ require(["resetGame", "randomNumber", "buttonEvents"], function (ResetGame, Gene
 /* Date: Feb 11th 2014 */
 /* Evolved by Kurt Friedrich Mar 18 2017 */
 $(document).ready(function() {
+    
 var buttonIndex = $('#button1');
 for(i =1; i < 6; i++){
-ButtonEvents.buttonEvents(buttonIndex);
+setButtonEvents(buttonIndex);
 buttonIndex = buttonIndex.next();
 }
 
 var buttonIndex = $('#button6');
 for(i =1; i < 6; i++){
-ButtonEvents.buttonEvents(buttonIndex);
+setButtonEvents(buttonIndex);
 buttonIndex = buttonIndex.next();
 }
 
@@ -148,5 +149,10 @@ function enableButtons() {
 // $('#button1').click(function () {
  //guessNumber('1');
   //  });
+    function setButtonEvents(theButton) {
+        theButton.click(function () {
+            guessNumber(theButton.val());
+        })
+}
 
 });

@@ -1,7 +1,7 @@
 // a function that resets the variables and re-starts the game
 // resets the messages displayed in the Html page with the initial messages
 
-define(function () {
+require(["index"],(function (index) {
 
     return {
         resetGame: function() {
@@ -22,7 +22,8 @@ define(function () {
     $('#divFireworks').css("display", "none");   // >> 3
     //document.getElementById("messageParagr").innerText = startGameMsg;
     $('#messageParagr').text(startGameMsg)  //>> 7
-    enableButtons();
+    index.enableButtons();
         }
     } 
-});
+})
+);
