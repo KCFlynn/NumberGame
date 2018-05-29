@@ -24,7 +24,7 @@ var tryNumber = document.getElementById("tryNumberButton");
 tryNumber.addEventListener("click", guessNumber2);
     
 var reset = document.getElementById("resetButton");
-reset.addEventListener("click", ResetGame.resetGame);
+reset.addEventListener("click", ResetGame.resetGame());
 
 });
 
@@ -41,7 +41,7 @@ var startGameMsg = "Click a number or enter one between 0 and 10.";
 var notANumberMsg = "Please enter a valid number!";
 
 //a variable that holds a randomly generated number 
-var randomNumber = GenerateRandomNumber.generateRandomNumber; // initializes with a generated random number between 1 and 10;
+var randomNumber = GenerateRandomNumber.generateRandomNumber(); // initializes with a generated random number between 1 and 10;
 
 //a boolean variable that holds the information about the satus of the guessed number
 var guessed = false; //initializes with false since the number is not guessed yet

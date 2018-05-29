@@ -3,7 +3,8 @@ define(function (){
  
     return{
         generateRandomNumber: function (){
-            Math.floor((Math.random() * 10) + 1);
+            var num = Math.floor((Math.random() * 10) + 1);
+            return num;
         }
     }
 });
