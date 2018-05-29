@@ -3,13 +3,33 @@
 
 define(function () {
 
+    function enableButtons() {
+    var buttonPointer = $('#button1');
+    for (var i = 1; i <= 5; i++) {
+        buttonPointer.prop('disabled', false);
+        buttonPointer = buttonPointer.next();
+        //document.getElementById(buttonId).disabled = false;    //   <<<<<<<<<<<<  11
+    }
+    var buttonPointer = $('#button6');
+    for (var i = 1; i <= 5; i++) {
+        buttonPointer.prop('disabled', false);
+        buttonPointer = buttonPointer.next();
+        //document.getElementById(buttonId).disabled = false;    //   <<<<<<<<<<<<  11
+    }
+    //document.getElementById("tryNumberButton").disabled = false;   // <<<<<<<<<  12
+    $('#tryNumberButton').prop('disabled', false);
+}
+    
     return {
         resetGame: function() {
-    randomNumber = generateRandomNumber();
+    var generator = require("generateRandomNumber");
+    var startGameMsg = "Click a number or enter one between 0 and 10.";
+    var triesAllowed = 4;        
+    randomNumber = generator.generateRandomNumber;
     //resets the number of tries 
     numberOfTries = 0;
     //resets the number of tries left to the maximum number of tries allowed
-    triesLeft = triesAllowed;
+    triesLeft = triesAllowed; // changed triesAllowed to 4, we can't take triesallowed from Main.js
     //resets the satus of the guesses number to false or not guessed
     guessed = false;
     // reset for the html text with the initial messages of the game
