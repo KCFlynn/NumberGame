@@ -1,3 +1,5 @@
+var triesAllowed = 4; //initializes the variable with 4 maximum tries
+var randomNumber = 0;
 require(["resetGame", "generateRandomNumber"], function (ResetGame, GenerateRandomNumber) {
     //usually people name the files and the functions with the same name
     
@@ -24,10 +26,9 @@ var tryNumber = document.getElementById("tryNumberButton");
 tryNumber.addEventListener("click", guessNumber2);
     
 var reset = document.getElementById("resetButton");
-reset.addEventListener("click", ResetGame.resetGame());
+reset.addEventListener("click", ResetGame.resetGame);
 
 });
-
 
 // a series of string variables that hold messages that are displayed depending on the status and course of the game
 
@@ -41,8 +42,7 @@ var startGameMsg = "Click a number or enter one between 0 and 10.";
 var notANumberMsg = "Please enter a valid number!";
 
 //a variable that holds a randomly generated number 
-var randomNumber = GenerateRandomNumber.generateRandomNumber(); // initializes with a generated random number between 1 and 10;
-
+randomNumber = GenerateRandomNumber.generateRandomNumber(); // initializes with a generated random number between 1 and 10;
 //a boolean variable that holds the information about the satus of the guessed number
 var guessed = false; //initializes with false since the number is not guessed yet
 
@@ -50,10 +50,9 @@ var guessed = false; //initializes with false since the number is not guessed ye
 var numberOfTries = 0; //initializes with with 0, since the user hadn't had a chance to guess yet
 
 //a constant variable that holds the maximum number or tries a player is allowed to guess the number
-var triesAllowed = 4; //initializes the variable with 4 maximum tries
 
 //a calculated variable that determines the number of tries that are left for the user to try
-var triesLeft = triesAllowed;  //initializes with the maximum tries allowed
+triesLeft = triesAllowed;                                                                                                                        //var triesLeft = triesAllowed;  //initializes with the maximum tries allowed
 
 var guessedNumber;  //holder for the number guessed by the user 
 

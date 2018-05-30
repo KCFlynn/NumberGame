@@ -24,8 +24,8 @@ define(function () {
         resetGame: function() {
     var generator = require("generateRandomNumber");
     var startGameMsg = "Click a number or enter one between 0 and 10.";
-    var triesAllowed = 4;        
-    randomNumber = generator.generateRandomNumber;
+    
+    randomNumber = generator.generateRandomNumber();
     //resets the number of tries 
     numberOfTries = 0;
     //resets the number of tries left to the maximum number of tries allowed
@@ -43,11 +43,12 @@ define(function () {
     //document.getElementById("messageParagr").innerText = startGameMsg;
     $('#messageParagr').text(startGameMsg)  //>> 7
     enableButtons();
+            
         }
     } 
 });
 
-/*in restGame.js  you are
+/*in resetGame.js  you are
 require(["main", "generateRandomNumber"],(function (Main, GenerateRandomNumber) {
 define(function () {
 
